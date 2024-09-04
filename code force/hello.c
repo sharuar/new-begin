@@ -1,23 +1,9 @@
-#include<stdio.h>
-int main()
-{
-int a, b, c;
+#include<bits/stdc++.h>
 
-printf("Enter number: ");
-scanf("%d %d %d", &a, &b, &c);
+using namespace std;
 
-if(a>b){
-    if(a>c)
-        printf("Large Number is %d", a);
-    else
-        printf("Large Number is %d", c);
-}
-else{
-    if(b>c)
-        printf("Large Number is %d", b);
-    else
-        printf("Large Number is %d", c);
-}
+int main(){
 
+    printf("hello world");
     return 0;
 }
