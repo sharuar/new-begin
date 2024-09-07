@@ -1,48 +1,40 @@
-#include<bits/stdc++.h>
-
-using namespace std;
-
-int strnlen(char *str){
-    int length = 0;
-
-    while(*str != '\0'){
-        length++;
-
-        str++;
-    }
-
-    return length;
-}
+#include<stdio.h>
+#include<string.h>
 
 int main(){
 
-    int n, len;
-    char str[100];
+    int n, len, i, j, tmp;
+    char str[100], rev[100];
     
     scanf("%d", &n);
-
+    getchar();
     while(n--){
         scanf("%[^\n]s",str);
-        len = strnlen(str);
+        getchar();
+        
+        len = strlen(str);
 
-        int l1 = len/2;
-        int l2 = len - l1;
+        tmp = len/2;
+        
 
-        for(int i=len-1; i>l2-1; i--){
+        for(i=0; i<len; i++){
             if((str[i] <= 'z' && str[i] >= 'a') || (str[i]<='Z' && str[i]>='A')){
-                printf("%c", str[i]+3);
+                str[i] = str[i]+3;
             }
-            else
-              printf("%c", str[i]);
         }
 
-        for(int i=l2-1; i>=0; i--){
-            if((str[i] <= 'z' && str[i] >= 'a') || (str[i]<='Z' && str[i]>='A')){
-                printf("%c", str[i]+2);
-            }
-            else
-                printf("%c", str[i]);
+        j = 0;
+        for(i=len-1; i>=0; i--){
+            rev[j] = str[i];
+            j++;
         }
+        rev[j] = '\0';
+        
+        for(i=len/2; i<len; i++){
+            rev[i] -= 1;
+        }
+       
+        printf("%s", rev);
         printf("\n");
     }
     
