@@ -3,6 +3,8 @@
 
 int main(){
 
+    freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
     int n, len, i, j, tmp;
     char str[100], rev[100];
     
